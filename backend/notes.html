@@ -1,0 +1,25 @@
+========================================================================================================================
+# I dont know why this signal is written, because authomatically profile will be saved
+def save_user_profile(sender, instance, **kwargs):
+instance.profile.save()
+post_save.connect(save_user_profile, sender=User)
+========================================================================================================================
+shortcut:
+jam kardan tabe:
+ctrl + -
+========================================================================================================================
+متد to_representation  داده‌های دلخواه ما را به نوع داده‌ای که در خروجی API مشاهده می‌شود تبدیل می‌کند
+و to_internal_value  اطلاعاتی که از مصرف‌کنندهٔ API دریافت شده را به اطلاعات مورد نظر سایر بخش‌های اپ تبدیل می‌کند.
+
+
+What are to_representation and to_internal_value?
+
+Serializers in the Django Rest Framework offer two methods: to_representation and to_internal_value.
+These techniques are used to translate between an object's internal representation and its serialised representation.
+
+The to_representation method is used to convert the internal representation of an object into its serialized
+representation. This is used when serializing an object to be sent over the wire.
+
+The to_internal_value method is used to convert the serialized representation of an object back into its internal
+representation. This is used when deserializing an object that has been received over the wire.
+========================================================================================================================
